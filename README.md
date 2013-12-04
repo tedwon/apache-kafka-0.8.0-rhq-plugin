@@ -1,4 +1,18 @@
-apache-kafka-0.8.0-rhq-plugin
-=============================
+apache-kafka-rhq-plugin
+=======================
 
-Apache Kafka 0.8.0 RHQ Plugin
+Apache Kafka RHQ Plugin
+
+Build Plugin
+-------------------
+
+mvn clean package
+
+apache-hadoop-rhq-plugin/target/apache-kafka-plugin-0.1-SNAPSHOT.jar
+
+
+
+Install Plugin
+-------------------
+
+http://localhost:7080/coregui/#Administration/Configuration/AgentPlugins
