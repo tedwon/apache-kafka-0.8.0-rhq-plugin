@@ -10,8 +10,8 @@
 
     <depends plugin="JMX" useClasses="true"/>
 
-    <service name="kafka.SocketServerStats"
-             description="Kafka SocketServerStats"
+    <service name="kafka.server:type=BrokerTopicMetrics"
+             description="kafka.server:type=BrokerTopicMetrics"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -21,126 +21,30 @@
 
         <plugin-configuration>
             <c:simple-property name="objectName"
-                               default="kafka:type=kafka.SocketServerStats"/>
-            <c:simple-property name="version" type="string" default="0.7.1" description="v0.7.1"/>
+                               default="&quot;kafka.server&quot;:type=&quot;BrokerTopicMetrics&quot;,name=&quot;AllTopicsBytesInPerSec&quot;"/>
+            <c:simple-property name="version" type="string" default="0.8.0" description="v0.8.0"/>
         </plugin-configuration>
 
-        <metric property="TotalBytesRead"
-                displayName="Total Bytes Read (bytes)"
+        <metric property="Count"
+                displayName="Count"
+                description="Count"
                 defaultOn="true"
+                dataType="measurement"
                 displayType="summary"
-                defaultInterval="30000"
-                units="bytes"
-                description="Total Bytes Read (bytes)"/>
+                defaultInterval="60000"
+                units="none"/>
 
-        <metric property="ProduceRequestsPerSecond"
-                displayName="ProduceRequestsPerSecond"
+        <metric property="EventType"
+                displayName="EventType"
+                description="EventType"
                 defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="none"
-                description="ProduceRequestsPerSecond"/>
-
-        <metric property="FetchRequestsPerSecond"
-                displayName="FetchRequestsPerSecond"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="none"
-                description="FetchRequestsPerSecond"/>
-
-        <metric property="AvgProduceRequestMs"
-                displayName="AvgProduceRequestMs"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="milliseconds"
-                description="AvgProduceRequestMs"/>
-
-        <metric property="MaxProduceRequestMs"
-                displayName="MaxProduceRequestMs"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="milliseconds"
-                description="MaxProduceRequestMs"/>
-
-        <metric property="AvgFetchRequestMs"
-                displayName="AvgFetchRequestMs"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="milliseconds"
-                description="AvgFetchRequestMs"/>
-
-        <metric property="MaxFetchRequestMs"
-                displayName="MaxFetchRequestMs"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="milliseconds"
-                description="MaxFetchRequestMs"/>
-
-        <metric property="BytesReadPerSecond"
-                displayName="BytesReadPerSecond"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="bytes"
-                description="BytesReadPerSecond"/>
-
-        <metric property="BytesWrittenPerSecond"
-                displayName="BytesWrittenPerSecond"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="bytes"
-                description="BytesWrittenPerSecond"/>
-
-        <metric property="NumFetchRequests"
-                displayName="NumFetchRequests"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="none"
-                description="NumFetchRequests"/>
-
-        <metric property="NumProduceRequests"
-                displayName="NumProduceRequests"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="none"
-                description="NumProduceRequests"/>
-
-        <metric property="TotalBytesWritten"
-                displayName="TotalBytesWritten"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="bytes"
-                description="TotalBytesWritten"/>
-
-        <metric property="TotalFetchRequestMs"
-                displayName="TotalFetchRequestMs"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="milliseconds"
-                description="TotalFetchRequestMs"/>
-
-        <metric property="TotalProduceRequestMs"
-                displayName="TotalProduceRequestMs"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="milliseconds"
-                description="TotalProduceRequestMs"/>
+                dataType="trait"
+                displayType="summary"/>
 
     </service>
 
-    <service name="kafka.BrokerAllTopicStat"
-             description="Kafka BrokerAllTopicStat"
+    <service name="kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs"
+             description="kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -150,158 +54,18 @@
 
         <plugin-configuration>
             <c:simple-property name="objectName"
-                               default="kafka:type=kafka.BrokerAllTopicStat"/>
-            <c:simple-property name="version" type="string" default="0.7.1" description="v0.7.1"/>
+                               default="&quot;kafka.log&quot;:type=&quot;LogFlushStats&quot;,name=&quot;LogFlushRateAndTimeMs&quot;"/>
+            <c:simple-property name="version" type="string" default="0.8.0" description="v0.8.0"/>
         </plugin-configuration>
 
-        <metric property="BytesIn"
-                displayName="BytesIn"
+        <metric property="MeanRate"
+                displayName="MeanRate"
+                description="MeanRate"
                 defaultOn="true"
+                dataType="measurement"
                 displayType="summary"
-                defaultInterval="30000"
-                units="bytes"
-                description="BytesIn"/>
-
-        <metric property="BytesOut"
-                displayName="BytesOut"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="bytes"
-                description="BytesOut"/>
-
-        <metric property="FailedFetchRequest"
-                displayName="FailedFetchRequest"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="none"
-                description="FailedFetchRequest"/>
-
-        <metric property="FailedProduceRequest"
-                displayName="FailedProduceRequest"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="none"
-                description="FailedProduceRequest"/>
-
-        <metric property="MessagesIn"
-                displayName="MessagesIn"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="none"
-                description="MessagesIn"/>
+                defaultInterval="60000"
+                units="none"/>
 
     </service>
-
-    <service name="kafka.BrokerTopicStat"
-             description="kafka.BrokerTopicStat"
-             discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
-             class="org.rhq.plugins.jmx.MBeanResourceComponent">
-
-        <runs-inside>
-            <parent-resource-type name="JMX Server" plugin="JMX"/>
-        </runs-inside>
-
-        <plugin-configuration>
-            <c:simple-property name="objectName"
-                               default="kafka:type=kafka.BrokerTopicStat.*"/>
-        </plugin-configuration>
-
-        <metric property="BytesIn"
-                displayName="BytesIn"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="bytes"
-                description="BytesIn"/>
-
-        <metric property="BytesOut"
-                displayName="BytesOut"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="bytes"
-                description="BytesOut"/>
-
-        <metric property="FailedFetchRequest"
-                displayName="FailedFetchRequest"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="none"
-                description="FailedFetchRequest"/>
-
-        <metric property="FailedProduceRequest"
-                displayName="FailedProduceRequest"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="none"
-                description="FailedProduceRequest"/>
-
-        <metric property="MessagesIn"
-                displayName="MessagesIn"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="none"
-                description="MessagesIn"/>
-
-    </service>
-
-    <service name="kafka logs"
-             description="kafka logs"
-             discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
-             class="org.rhq.plugins.jmx.MBeanResourceComponent">
-
-        <runs-inside>
-            <parent-resource-type name="JMX Server" plugin="JMX"/>
-        </runs-inside>
-
-        <plugin-configuration>
-            <c:simple-property name="objectName"
-                               default="kafka:type=kafka.logs.*"/>
-        </plugin-configuration>
-
-        <metric displayName="Name" property="Name"
-                description="Name"
-                dataType="trait" displayType="summary"/>
-
-        <metric property="CurrentOffset"
-                displayName="CurrentOffset"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="none"
-                description="CurrentOffset"/>
-
-        <metric property="NumAppendedMessages"
-                displayName="NumAppendedMessages"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="none"
-                description="NumAppendedMessages"/>
-
-        <metric property="NumberOfSegments"
-                displayName="NumberOfSegments"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="none"
-                description="NumberOfSegments"/>
-
-        <metric property="Size"
-                displayName="Size"
-                defaultOn="true"
-                displayType="summary"
-                defaultInterval="30000"
-                units="bytes"
-                description="Size"/>
-
-    </service>
-
 </plugin>
