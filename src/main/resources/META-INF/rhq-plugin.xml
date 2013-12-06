@@ -10,7 +10,32 @@
 
     <depends plugin="JMX" useClasses="true"/>
 
-    <!--kafka.cluster:Partition:TODO:TOPICNAME-N-UnderReplicated-->
+    <!--kafka.cluster:Partition:TOPICNAME-N-UnderReplicated-->
+    <service name="kafka.cluster:type=Partition"
+             description="kafka.cluster:type=Partition"
+             discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
+             class="org.rhq.plugins.jmx.MBeanResourceComponent">
+
+        <runs-inside>
+            <parent-resource-type name="JMX Server" plugin="JMX"/>
+        </runs-inside>
+
+        <plugin-configuration>
+            <c:simple-property name="objectName"
+                               default="&quot;kafka.cluster&quot;:type=&quot;Partition&quot;,name=&quot;*&quot;"/>
+            <c:simple-property name="version" type="string" default="0.8.0" description="v0.8.0"/>
+        </plugin-configuration>
+
+        <metric property="Value"
+                displayName="Value"
+                description="Value"
+                defaultOn="true"
+                dataType="measurement"
+                displayType="summary"
+                defaultInterval="60000"
+                units="none"/>
+
+    </service>
 
     <!--kafka.controller:ControllerStats:LeaderElectionRateAndTimeMs-->
     <service name="kafka.controller:type=ControllerStats,name=LeaderElectionRateAndTimeMs"
@@ -316,8 +341,33 @@
 
     </service>
 
-    <!--kafka.log:Log:TODO:TOPICNAME-N-LogEndOffset-->
-    <!--kafka.log:Log:TODO:TOPICNAME-N-NumLogSegments-->
+    <!--kafka.log:Log:TOPICNAME-N-LogEndOffset-->
+    <!--kafka.log:Log:TOPICNAME-N-NumLogSegments-->
+    <service name="kafka.log:type=Log"
+             description="kafka.log:type=Log"
+             discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
+             class="org.rhq.plugins.jmx.MBeanResourceComponent">
+
+        <runs-inside>
+            <parent-resource-type name="JMX Server" plugin="JMX"/>
+        </runs-inside>
+
+        <plugin-configuration>
+            <c:simple-property name="objectName"
+                               default="&quot;kafka.log&quot;:type=&quot;Log&quot;,name=&quot;*&quot;"/>
+            <c:simple-property name="version" type="string" default="0.8.0" description="v0.8.0"/>
+        </plugin-configuration>
+
+        <metric property="Value"
+                displayName="Value"
+                description="Value"
+                defaultOn="true"
+                dataType="measurement"
+                displayType="summary"
+                defaultInterval="60000"
+                units="none"/>
+
+    </service>
 
     <!--kafka.log:LogFlushStats:LogFlushRateAndTimeMs-->
     <service name="kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs"
@@ -493,7 +543,32 @@
 
     </service>
 
-    <!--kafka.network:RequestChannel:TODO:Processor-N-ResponseQueueSize-->
+    <!--kafka.network:RequestChannel:Processor-N-ResponseQueueSize-->
+    <service name="kafka.network:type=RequestChannel"
+             description="kafka.network:type=RequestChannel"
+             discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
+             class="org.rhq.plugins.jmx.MBeanResourceComponent">
+
+        <runs-inside>
+            <parent-resource-type name="JMX Server" plugin="JMX"/>
+        </runs-inside>
+
+        <plugin-configuration>
+            <c:simple-property name="objectName"
+                               default="&quot;kafka.network&quot;:type=&quot;RequestChannel&quot;,name=&quot;*&quot;"/>
+            <c:simple-property name="version" type="string" default="0.8.0" description="v0.8.0"/>
+        </plugin-configuration>
+
+        <metric property="Value"
+                displayName="Value"
+                description="Value"
+                defaultOn="true"
+                dataType="measurement"
+                displayType="summary"
+                defaultInterval="60000"
+                units="none"/>
+
+    </service>
 
     <!--kafka.network:RequestChannel:RequestQueueSize-->
     <service name="kafka.network:type=RequestChannel,name=RequestQueueSize"
@@ -7523,7 +7598,81 @@
                 displayType="summary"/>
     </service>
 
-    <!--kafka.server:BrokerTopicMetrics:TODO:TOPICNAME-BytesInPerSec-->
+    <!--kafka.server:BrokerTopicMetrics:TOPICNAME-BytesInPerSec-->
+    <service name="kafka.server:type=BrokerTopicMetrics"
+             description="kafka.server:type=BrokerTopicMetrics"
+             discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
+             class="org.rhq.plugins.jmx.MBeanResourceComponent">
+
+        <runs-inside>
+            <parent-resource-type name="JMX Server" plugin="JMX"/>
+        </runs-inside>
+
+        <plugin-configuration>
+            <c:simple-property name="objectName"
+                               default="&quot;kafka.server&quot;:type=&quot;BrokerTopicMetrics&quot;,name=&quot;*&quot;"/>
+            <c:simple-property name="version" type="string" default="0.8.0" description="v0.8.0"/>
+        </plugin-configuration>
+
+        <metric property="Count"
+                displayName="Count"
+                description="Count"
+                defaultOn="true"
+                dataType="measurement"
+                displayType="summary"
+                defaultInterval="60000"
+                units="none"/>
+
+        <metric property="EventType"
+                displayName="EventType"
+                description="EventType"
+                defaultOn="true"
+                dataType="trait"
+                displayType="summary"/>
+
+        <metric property="FifteenMinuteRate"
+                displayName="FifteenMinuteRate"
+                description="FifteenMinuteRate"
+                defaultOn="true"
+                dataType="measurement"
+                displayType="summary"
+                defaultInterval="60000"
+                units="none"/>
+
+        <metric property="FiveMinuteRate"
+                displayName="FiveMinuteRate"
+                description="FiveMinuteRate"
+                defaultOn="true"
+                dataType="measurement"
+                displayType="summary"
+                defaultInterval="60000"
+                units="none"/>
+
+        <metric property="MeanRate"
+                displayName="MeanRate"
+                description="MeanRate"
+                defaultOn="true"
+                dataType="measurement"
+                displayType="summary"
+                defaultInterval="60000"
+                units="none"/>
+
+        <metric property="OneMinuteRate"
+                displayName="OneMinuteRate"
+                description="OneMinuteRate"
+                defaultOn="true"
+                dataType="measurement"
+                displayType="summary"
+                defaultInterval="60000"
+                units="none"/>
+
+        <metric property="RateUnit"
+                displayName="RateUnit"
+                description="RateUnit"
+                defaultOn="true"
+                dataType="trait"
+                displayType="summary"/>
+    </service>
 
     <!--kafka.server:DelayedFetchRequestMetrics:ConsumerExpiresPerSecond-->
     <service name="kafka.server:type=DelayedFetchRequestMetrics"
@@ -7914,7 +8063,6 @@
                 units="none"/>
 
     </service>
-
 
     <!--kafka.server:ReplicaManager:"ISRShrinksPerSec"-->
     <service name="kafka.server:type=ReplicaManager"
