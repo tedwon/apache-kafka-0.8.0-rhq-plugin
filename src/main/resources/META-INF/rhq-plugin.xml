@@ -7219,8 +7219,8 @@
     </service>
 
     <!--kafka.server:BrokerTopicMetrics:AllTopicsBytesInPerSec-->
-    <service name="kafka.server:type=BrokerTopicMetrics"
-             description="kafka.server:type=BrokerTopicMetrics"
+    <service name="kafka.server:type=BrokerTopicMetrics,name=AllTopicsBytesInPerSec"
+             description="kafka.server:type=BrokerTopicMetrics,name=AllTopicsBytesInPerSec"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -7295,8 +7295,8 @@
     </service>
 
     <!--kafka.server:BrokerTopicMetrics:AllTopicsBytesOutPerSec-->
-    <service name="kafka.server:type=BrokerTopicMetrics"
-             description="kafka.server:type=BrokerTopicMetrics"
+    <service name="kafka.server:type=BrokerTopicMetrics,name=AllTopicsBytesOutPerSec"
+             description="kafka.server:type=BrokerTopicMetrics,name=AllTopicsBytesOutPerSec"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -7371,8 +7371,8 @@
     </service>
 
     <!--kafka.server:BrokerTopicMetrics:AllTopicsFailedFetchRequestsPerSec-->
-    <service name="kafka.server:type=BrokerTopicMetrics"
-             description="kafka.server:type=BrokerTopicMetrics"
+    <service name="kafka.server:type=BrokerTopicMetrics,name=AllTopicsFailedFetchRequestsPerSec"
+             description="kafka.server:type=BrokerTopicMetrics,name=AllTopicsFailedFetchRequestsPerSec"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -7447,8 +7447,8 @@
     </service>
 
     <!--kafka.server:BrokerTopicMetrics:AllTopicsFailedProduceRequestsPerSec-->
-    <service name="kafka.server:type=BrokerTopicMetrics"
-             description="kafka.server:type=BrokerTopicMetrics"
+    <service name="kafka.server:type=BrokerTopicMetrics,name=AllTopicsFailedProduceRequestsPerSec"
+             description="kafka.server:type=BrokerTopicMetrics,name=AllTopicsFailedProduceRequestsPerSec"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -7523,8 +7523,8 @@
     </service>
 
     <!--kafka.server:BrokerTopicMetrics:AllTopicsMessagesInPerSec-->
-    <service name="kafka.server:type=BrokerTopicMetrics"
-             description="kafka.server:type=BrokerTopicMetrics"
+    <service name="kafka.server:type=BrokerTopicMetrics,name=AllTopicsMessagesInPerSec"
+             description="kafka.server:type=BrokerTopicMetrics,name=AllTopicsMessagesInPerSec"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -7675,8 +7675,8 @@
     </service>
 
     <!--kafka.server:DelayedFetchRequestMetrics:ConsumerExpiresPerSecond-->
-    <service name="kafka.server:type=DelayedFetchRequestMetrics"
-             description="kafka.server:type=DelayedFetchRequestMetrics"
+    <service name="kafka.server:type=DelayedFetchRequestMetrics,name=ConsumerExpiresPerSecond"
+             description="kafka.server:type=DelayedFetchRequestMetrics,name=ConsumerExpiresPerSecond"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -7751,8 +7751,8 @@
     </service>
 
     <!--kafka.server:DelayedFetchRequestMetrics:FollowerExpiresPerSecond-->
-    <service name="kafka.server:type=DelayedFetchRequestMetrics"
-             description="kafka.server:type=DelayedFetchRequestMetrics"
+    <service name="kafka.server:type=DelayedFetchRequestMetrics,name=FollowerExpiresPerSecond"
+             description="kafka.server:type=DelayedFetchRequestMetrics,name=FollowerExpiresPerSecond"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -7827,8 +7827,8 @@
     </service>
 
     <!--kafka.server:DelayedProducerRequestMetrics:AllExpiresPerSecond-->
-    <service name="kafka.server:type=DelayedProducerRequestMetrics"
-             description="kafka.server:type=DelayedProducerRequestMetrics"
+    <service name="kafka.server:type=DelayedProducerRequestMetrics,name=AllExpiresPerSecond"
+             description="kafka.server:type=DelayedProducerRequestMetrics,name=AllExpiresPerSecond"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -7903,8 +7903,8 @@
     </service>
 
     <!--kafka.server:FetchRequestPurgatory:NumDelayedRequests-->
-    <service name="kafka.server:type=FetchRequestPurgatory"
-             description="kafka.server:type=FetchRequestPurgatory"
+    <service name="kafka.server:type=FetchRequestPurgatory,name=NumDelayedRequests"
+             description="kafka.server:type=FetchRequestPurgatory,name=NumDelayedRequests"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -7930,8 +7930,8 @@
     </service>
 
     <!--kafka.server:FetchRequestPurgatory:PurgatorySize-->
-    <service name="kafka.server:type=FetchRequestPurgatory"
-             description="kafka.server:type=FetchRequestPurgatory"
+    <service name="kafka.server:type=FetchRequestPurgatory,name=PurgatorySize"
+             description="kafka.server:type=FetchRequestPurgatory,name=PurgatorySize"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -7957,8 +7957,8 @@
     </service>
 
     <!--kafka.server:ProducerRequestPurgatory:"NumDelayedRequests"-->
-    <service name="kafka.server:type=ProducerRequestPurgatory"
-             description="kafka.server:type=ProducerRequestPurgatory"
+    <service name="kafka.server:type=ProducerRequestPurgatory,name=NumDelayedRequests"
+             description="kafka.server:type=ProducerRequestPurgatory,name=NumDelayedRequests"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -7984,8 +7984,8 @@
     </service>
 
     <!--kafka.server:ProducerRequestPurgatory:PurgatorySize-->
-    <service name="kafka.server:type=ProducerRequestPurgatory"
-             description="kafka.server:type=ProducerRequestPurgatory"
+    <service name="kafka.server:type=ProducerRequestPurgatory,name=PurgatorySize"
+             description="kafka.server:type=ProducerRequestPurgatory,name=PurgatorySize"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -8011,8 +8011,8 @@
     </service>
 
     <!--kafka.server:ReplicaFetcherManager:"Replica-MaxLag"-->
-    <service name="kafka.server:type=ReplicaFetcherManager"
-             description="kafka.server:type=ReplicaFetcherManager"
+    <service name="kafka.server:type=ReplicaFetcherManager,name=Replica-MaxLag"
+             description="kafka.server:type=ReplicaFetcherManager,name=Replica-MaxLag"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -8038,8 +8038,8 @@
     </service>
 
     <!--kafka.server:ReplicaFetcherManager:"Replica-MinFetchRate"-->
-    <service name="kafka.server:type=ReplicaFetcherManager"
-             description="kafka.server:type=ReplicaFetcherManager"
+    <service name="kafka.server:type=ReplicaFetcherManager,name=Replica-MinFetchRate"
+             description="kafka.server:type=ReplicaFetcherManager,name=Replica-MinFetchRate"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -8065,8 +8065,8 @@
     </service>
 
     <!--kafka.server:ReplicaManager:"ISRShrinksPerSec"-->
-    <service name="kafka.server:type=ReplicaManager"
-             description="kafka.server:type=ReplicaManager"
+    <service name="kafka.server:type=ReplicaManager,name=ISRShrinksPerSec"
+             description="kafka.server:type=ReplicaManager,name=ISRShrinksPerSec"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -8141,8 +8141,8 @@
     </service>
 
     <!--kafka.server:ReplicaManager:"IsrExpandsPerSec"-->
-    <service name="kafka.server:type=ReplicaManager"
-             description="kafka.server:type=ReplicaManager"
+    <service name="kafka.server:type=ReplicaManager,name=IsrExpandsPerSec"
+             description="kafka.server:type=ReplicaManager,name=IsrExpandsPerSec"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -8217,8 +8217,8 @@
     </service>
 
     <!--kafka.server:ReplicaManager:"LeaderCount"-->
-    <service name="kafka.server:type=ReplicaManager"
-             description="kafka.server:type=ReplicaManager"
+    <service name="kafka.server:type=ReplicaManager,name=LeaderCount"
+             description="kafka.server:type=ReplicaManager,name=LeaderCount"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -8244,8 +8244,8 @@
     </service>
 
     <!--kafka.server:ReplicaManager:"PartitionCount"-->
-    <service name="kafka.server:type=ReplicaManager"
-             description="kafka.server:type=ReplicaManager"
+    <service name="kafka.server:type=ReplicaManager,name=PartitionCount"
+             description="kafka.server:type=ReplicaManager,name=PartitionCount"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
@@ -8271,8 +8271,8 @@
     </service>
 
     <!--kafka.server:ReplicaManager:"UnderReplicatedPartitions"-->
-    <service name="kafka.server:type=ReplicaManager"
-             description="kafka.server:type=ReplicaManager"
+    <service name="kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions"
+             description="kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions"
              discovery="org.rhq.plugins.jmx.MBeanResourceDiscoveryComponent"
              class="org.rhq.plugins.jmx.MBeanResourceComponent">
 
